@@ -4,7 +4,6 @@ import Modelo.Rol;
 import java.util.List;
 
 
-
 public interface CRUD_Rol {
     public List listarol();
     public Rol buscarrol(int idrol);

@@ -62,7 +62,6 @@
                         int num=1;  
                         while (iterator.hasNext()) {
                             rol = iterator.next();
-                            
                            String ide =  String.valueOf(rol.getIdrol());
                     consulta = " select idrol  "
                                 + " from sugerencia "

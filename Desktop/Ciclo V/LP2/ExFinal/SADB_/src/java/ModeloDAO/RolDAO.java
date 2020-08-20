@@ -9,7 +9,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class RolDAO implements CRUD_Rol{
     ConectaBd cn = new ConectaBd();
     Connection con;
