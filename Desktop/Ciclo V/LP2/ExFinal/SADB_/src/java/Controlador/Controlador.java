@@ -6,8 +6,10 @@
 package Controlador;
 import Modelo.Persona;
 import Modelo.Area;
+import Modelo.Rol;
 import ModeloDAO.PersonaDAO;
 import ModeloDAO.AreaDAO;
+import ModeloDAO.RolDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -45,6 +47,9 @@ public class Controlador extends HttpServlet {
     
     Area area = new Area();
     AreaDAO areaDAO = new AreaDAO();
+    
+    Rol rol = new Rol();
+    RolDAO rolDAO = new RolDAO();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -168,6 +173,36 @@ public class Controlador extends HttpServlet {
         
         //-------------------FIN DE AREA------------------------------//
         //----------------------ROL---------------------------------//
+        
+        if (s_accion.equalsIgnoreCase("listarrol")) {
+            acceso = listarrol;
+        }else if (s_accion.equalsIgnoreCase("agregarrol01")) {
+            acceso = agregarrol;
+        }else if(s_accion.equalsIgnoreCase("agregarrol02")){
+            String s_nombre = request.getParameter("f_nombre");
+            String s_estado = request.getParameter("f_estado");
+            rol.setNombre(s_nombre);
+            rol.setEstado(s_estado);
+            rolDAO.agregarrol(rol);
+            acceso = listarrol;
+        }else if (s_accion.equalsIgnoreCase("editarrol01")) {
+            request.setAttribute("f_idrol", request.getParameter("f_idrol"));
+            acceso = editarrol;
+        }else if (s_accion.equalsIgnoreCase("editarrol02")) {
+            int s_idrol = Integer.valueOf(request.getParameter("f_idrol"));
+            String s_nombre = request.getParameter("f_nombre");
+            String s_estado = request.getParameter("f_estado");
+            rol.setIdrol(s_idrol);
+            rol.setNombre(s_nombre);
+            rol.setEstado(s_estado);
+            rolDAO.editarrol(rol);
+            
+            acceso = listarrol;
+        }else if (s_accion.equalsIgnoreCase("eliminarrol")) {
+            int s_idrol = Integer.valueOf(request.getParameter("f_idrol"));
+            rolDAO.eliminarrol(s_idrol);
+            acceso = listarrol;
+        }
         
         //-------------------FIN DE ROL------------------------------//
         RequestDispatcher vista = request.getRequestDispatcher(acceso);
