@@ -43,9 +43,9 @@
 
                       
         </div>
-    <body>
+    <body><font color="white">
         <div class="container">
-            <h1>Listado de Personas</h1>
+            <h2 class="text-center"><font color="white">LISTA DE PERSONAS</font></h2>
             <a class="btn btn-success" href="Controlador?f_accion=agregarpersona01">Agregar Persona</a>
             <table class="table table-bordered">
                 <thead>
@@ -120,6 +120,6 @@
                 </tbody>
             </table>
 
-        </div>
+        </div></font>
     </body>
 </html>

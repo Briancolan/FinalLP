@@ -16,6 +16,7 @@
     </head>
     <body>
         <div class="container">
+            <h2 class="text-center"><font color="white">EDITAR PERSONA</font></h2>
             <%
                 PersonaDAO personaDAO = new PersonaDAO();
                 int s_idpersona = Integer.valueOf(request.getParameter("f_idpersona"));
@@ -23,31 +24,29 @@
             %>
             <form name="EditarPersonasForm" action="Controlador" method="get">
                 <table  class="table">
-                    <thead>
-                        <tr>
-                            <th class="text-center" colspan="2">Editar Personas</th>                            
-                        </tr>
-                    </thead>
                     <tbody>
                         <tr>
-                            <td class="text-right">Nombre: </td>
+                            <td class="text-right"><font color="white">Nombre: </font></td>
                             <td><input type="text" name="f_nombre" value="<% out.print(persona.getNombre()); %>" maxlength="30" size="20" /></td>
                         </tr>
                         <tr>
-                            <td class="text-right">Apellidos: </td>
+                            <td class="text-right"><font color="white">Apellidos: </font></td>
                             <td><input type="text" name="f_apellidos" value="<% out.print(persona.getApellidos()); %>" maxlength="40" size="20" /></td>
                         </tr>
                         <tr>
-                            <td class="text-right">DNI: </td>
+                            <td class="text-right"><font color="white">DNI: </font> </td>
                             <td><input type="text" name="f_dni" value="<% out.print(persona.getDni()); %>" maxlength="8" size="8" /></td>
                         </tr>
                         <tr>
-                            <td class="text-right">Dirección</td>
+                            <td class="text-right"><font color="white">Dirección: </font></td>
                             <td><input type="text" name="f_direccion" value="<% out.print(persona.getDireccion()); %>" maxlength="12" size="12" /></td>
                         </tr>
                         <tr>
-                            <td class="text-right">Estado</td>
-                            <td><input type="text" name="f_estado" value="<% out.print(persona.getEstado()); %>" maxlength="1" size="2" /></td>
+                            <td class="text-right"><font color="white">Estado: </font></td>
+                            <td><select name="f_estado">
+                                <option>A</option>
+                                <option>D</option>
+                             </select></td>
                         </tr>
                         <tr>
                             <td class="text-center" colspan="2">

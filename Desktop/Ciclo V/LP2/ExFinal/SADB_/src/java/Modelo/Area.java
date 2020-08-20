@@ -39,8 +39,5 @@ public class Area {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-
-    
-    
     
 }

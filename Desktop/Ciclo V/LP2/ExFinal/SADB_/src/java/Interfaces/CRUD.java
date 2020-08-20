@@ -11,4 +11,5 @@ public interface CRUD {
     public boolean agregarpersona(Persona persona);
     public boolean editarpersona(Persona persona);
     public boolean eliminarpersona(int idpersona);
+
 }
